@@ -1,0 +1,14 @@
+SELECT title,category ,views ,ad_revenue  FROM videos WHERE (category='Technology'AND views>1000)OR(category='Gaming' AND ad_revenue>5000)
+ORDER BY ad_revenue DESC 
+SELECT channel_name,subscriber_count FROM channels ORDER BY subscriber_count DESC OFFSET 3 LIMIT 6; 
+SELECT channel_name,subscriber_count FROM channels ORDER BY subscriber_count OFFSET 3 LIMIT 6; 
+SELECT channel_name,subscriber_count FROM channels ORDER BY subscriber_count DESC LIMIT 3; 
+SELECT channel_name,subscriber_count FROM channels ORDER BY subscriber_count DESC LIMIT 3; 
+SELECT title,duration_seconds FROM videos WHERE duration_seconds <300 OR duration_seconds >1200 
+ORDER BY duration_seconds DESC
+SELECT name,joined_date FROM users WHERE joined_date BETWEEN '2020-01-01'AND '2022-12-01'
+ORDER BY joined_date DESC
+SELECT * FROM comments WHERE (rating >3 AND rating<5)  OR likes>500 ORDER BY likes DESC
+SELECT title ,views ,ad_revenue ,ad_revenue*1000/views AS ad_revenue_per_1000_views FROM videos
+SELECT  channel_name,subscriber_count FROM channels WHERE subscriber_count >200000 AND (channel_name like '%T'OR channel_name like '%S') 
+SELECT  *  FROM videos WHERE category!='Gaming' AND views >50000 
